@@ -59,7 +59,7 @@ import { title, data as members } from './members.js';
 printer(title);
 arrPrinter(members);
 ```
-### 한꺼번에 export하기
+## 한꺼번에 export하기
 변수나 함수 앞에 매번 `export` 키워드를 붙일 수도 있지만, 선언된 변수나 함수를 하나의 객체로 모아 한꺼번에 내보낼 수도 있습니다.
 
 이때 `as` 키워드를 활용하면 이름을 변경해서 `export`할 수도 있습니다.
@@ -80,7 +80,7 @@ export { title as printerTitle, print, printArr };
 ```
 
 
-### 한꺼번에 import하기
+## 한꺼번에 import하기
 `import` 할 때, **와일드카드 문자(*)** 와 `as`를 활용하면 모듈 파일에서 `export` 하는 모든 대상을 하나의 객체로 불러올 수 있습니다. 
 ```js
 import * as printerJS from './printer.js';
@@ -89,7 +89,7 @@ console.log(printerJS.title); // CodeitPrinter
 console.log(printerJS.print); // ƒ print(value) { console.log(value); }
 ```
 
-### default export
+## default export
 `export`를 할때 `default` 키워드를 함께 사용하면 모듈 파일에서 기본적으로 `export`할 대상을 정할 수 있습니다.
 
 일반적으로 모듈 파일에서 `export`대상이 하나라면, 이 `default` 키워드를 함께 활용하는 것이 조금 더 간결한 코드를 구성하는데 도움이 되는데요.
