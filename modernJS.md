@@ -746,6 +746,30 @@ const myLaptop = devices.find((element, index, array) => {
 
 console.log(myLaptop); // {name: "Gram", brand: "LG"}
 ```
+**<실습하면서 얻은 정보>**
+>   `find` 메서드는 조건을 만족하는 첫 번째 요소를 반환하거나, 조건을 만족하는 요소가 없을 경우 undefined를 반환합니다. 따라서 if (user) 조건문은 조건을 만족하는 사용자가 있는 경우에만 참이 됩니다.
+```js
+// USER_DATA와 입력값 비교 후 로그인 성공 / 실패 
+var link = 'items.html';
+
+function loginSuccess() {
+  const emailValue = emailInput.value;
+  const passwordValue =passwordInput.value;
+
+  const user = USER_DATA.find((el) => emailValue === el.email && passwordValue === el.password);
+
+  console.log('로그인 시도:', emailValue, passwordValue); // 추가된 로그
+  if (user) {
+    console.log('로그인 성공:', user); // 추가된 로그
+    document.location.href = link;
+    alert('로그인 성공!');
+  } else {
+    alert('비밀번호가 일치하지 않습니다.');
+    console.log('로그인 실패'); // 추가된 로그
+  }
+}
+useBtn.addEventListener('click', loginSuccess);
+```
 ### some 메소드
 > `some` 메소드는 배열 안에 콜백함수가 리턴하는 조건을 만족하는 요소가 1개 이상 있는지를 확인하는 메소드 입니다.
 
