@@ -1,4 +1,4 @@
-## ✍ Modern Javascript
+# ✍ Modern Javascript
 ### 자바스크립트의 동작 원리
 > 기본형 (Primitive Type)
 - Number
