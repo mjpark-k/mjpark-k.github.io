@@ -1,9 +1,14 @@
-let previous = 0;
-let current = 1;
-
-for (let i = 1; i <= 50; i++) {
-  console.log(current);
-  let temp = previous;  // previous를 임시 보관소 temp에 저장
-  previous = current;
-  current = current + temp;  // temp에는 기존 previous 값이 저장돼 있음
+function interestCalculator(myMoney, saveTerm, interestRate) {
+  return myMoney * saveTerm * interestRate / 100;
 }
+
+let myMoney = 3650000;
+let saveTerm = 1;
+let interestRate = 4;
+
+let myInterestCalculator = interestCalculator(myMoney, saveTerm, interestRate);
+let totalMoney = myMoney + myInterestCalculator;
+
+console.log(`맡긴 금액은 ${myMoney}원 입니다.`);
+console.log(`이자는 ${myInterestCalculator}원 입니다.`);
+console.log(`최종 받을 금액은 ${totalMoney}원 입니다.`)

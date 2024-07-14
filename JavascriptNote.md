@@ -97,9 +97,12 @@ bmiCalculator('통통이', 77.76, 180);
 ```
 
 > return 값
+
+> 함수 내부에서만 작동을 하고 함수 외부로 나가면 사라지는 특성 때문에 `return`을 활용한다.
 ```js
 function getTwice(number){
   return number * 2;
+  // 만약 return이 아니라 let twiceNumber = number * 2; 라면, 밖에서 사용할 수가 없다.
 };
 
 let x = getTwice(5);
