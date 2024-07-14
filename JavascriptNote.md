@@ -848,7 +848,8 @@ myVoca.printVoca('property');
 > }  
 ```js
 codeit = {
-  name: '코드잇',
+//property name: property value,
+//key: codeit[key],  name: '코드잇',
   bornYear: 2017,
   isVeryNice: true,
   worstCourse: null,
@@ -876,6 +877,11 @@ let myObject = {
 for (let key in myObject) {
   console.log(myObject[key]);
 }
+//결과//
+// 자바스크립트 프로그래밍 기초
+// 알고리즘의 정석
+// 컴퓨터 개론
+
 
 console.log('');
 /**
@@ -892,6 +898,10 @@ myObject = {
 for (let key in myObject) {
   console.log(`${key}의 자료형은 ${typeof key}입니다.`);
 }
+//결과//
+// 300의 자료형은 string입니다.
+// 1.2의 자료형은 string입니다.
+
 
 // 그리고 예외적인 파라미터 네임은 접근할 때도 [대괄호표기법]으로만 접근이 가능함
 console.log(myObject['300']);
@@ -914,10 +924,10 @@ myObject = {
   2: '정수2',
   };
   
-  for (let key in myObject) {
-    console.log(key);
-    }
-    console.log(myObject);
+for (let key in myObject) {
+  console.log(key);
+}
+console.log(myObject);
 /**
  * 주의사항
     자동으로 정렬되는 특성이 장점처럼 느껴질 수도 있지만

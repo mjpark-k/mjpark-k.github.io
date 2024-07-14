@@ -1,14 +1,20 @@
-function interestCalculator(myMoney, saveTerm, interestRate) {
-  return myMoney * saveTerm * interestRate / 100;
+async function getEmployee(id) {
+  const response = await fetch(`https://learn.codeit.kr/api/employees/${id}`);
+  const data = await response.json();
+  return data;
 }
 
-let myMoney = 3650000;
-let saveTerm = 1;
-let interestRate = 4;
+// const promises = [];
 
-let myInterestCalculator = interestCalculator(myMoney, saveTerm, interestRate);
-let totalMoney = myMoney + myInterestCalculator;
+// for (let i = 1; i < 11; i++) {
+//   promises.push(getEmployee(i));
+// }
 
-console.log(`맡긴 금액은 ${myMoney}원 입니다.`);
-console.log(`이자는 ${myInterestCalculator}원 입니다.`);
-console.log(`최종 받을 금액은 ${totalMoney}원 입니다.`)
+console.log(await getEmployee(1));
+// console.log(promises);
+
+// let employees;
+
+// employees = await Promise.all(promises);
+
+// console.log(employees);
