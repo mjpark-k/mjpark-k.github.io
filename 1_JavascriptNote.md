@@ -955,22 +955,29 @@ let minsoonScore = {
 
 function passChecker(scoreObject) {
   // 여기에 코드를 작성해 주세요.
-  let totalScore = 0;
-
-  for (let subject in scoreObject) {
-    totalScore += scoreObject[subject];
-  }
   /**
    * ↓ 내가 쓴 코드(for..in을 활용하면 간결하게 활용할 수 있다. 추상화를 위해 위에 간결한 코드를 공부해라)
    */
   // totalScore = scoreObject['데이터 모델링의 이해'] + scoreObject['데이터 모델과 성능'] 
   // + scoreObject['SQL 기본'] + scoreObject['SQL 활용'] + scoreObject['SQL 최적화 기본 원리'];
 
+  // if (totalScore >= 60) {
+  //   console.log('축하합니다! 합격입니다!');
+  // } else {
+  //   console.log('아쉽지만 불합격입니다..');       
+  // }
+  
+  let totalScore = 0;
+  for (let subject in scoreObject) {
+    totalScore += scoreObject[subject];
+  }
+
   if (totalScore >= 60) {
     console.log('축하합니다! 합격입니다!');
   } else {
-    console.log('아쉽지만 불합격입니다..');       
+    console.log('아쉽지만, 불합격입니다..');
   }
+
 }
 
 passChecker(hyesoonScore);

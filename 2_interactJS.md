@@ -325,7 +325,7 @@ https://www.codeit.kr/topics/interactive-javascript/lessons/3826
 > 이벤트 핸들러가 자식 요소에까지 영향을 끼치게 하고싶은 경우에는 `mouseover`/`mouseout`을, 자식 요소에는 영향을 끼치지 않고 해당 요소에만 이벤트 핸들러를 다루고자 한다면 `mouseenter`/`mouseleave`를 활용하면 좋습니다.
 
 ### MouseEvent.위치프로퍼티
-![alt text](image.png)
+![alt text](/images/mouseMove.png)
 
 ### MouseEvent.relatedTarget
 `mouseenter`, `mouseleave`, `mouseover, mouseout` 이벤트에는 `relatedTarget`이라는 프로퍼티가 존재하는데요.

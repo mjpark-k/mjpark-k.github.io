@@ -534,7 +534,7 @@ function printCatName(user) {
 }
 ```
 ```js
-// null 병합 연산자와 함께 ㅎ활용하면 다음과 같이 응용할 수도 있습니다.
+// null 병합 연산자와 함께 활용하면 다음과 같이 응용할 수도 있습니다.
 function printCatName(user) {
   console.log(user.cat?.name ?? '함께 지내는 고양이가 없습니다.');
 }
@@ -701,6 +701,7 @@ const apples = devices.filter((element, index, array) => {
 
 console.log(apples); // (2) [{name: "MacbookPro", brand: "Apple"}, {name: "MacbookAir", brand: "Apple"}]
 ```
+> **자바스크립트에서는 문자열도 indexing이 가능하다는 사실 잊지 않으셨죠?** 잠깐 잊었었다...ㄴ
 ```js
 // filter 실습 김씨 빼고 다 찾아내!
 
