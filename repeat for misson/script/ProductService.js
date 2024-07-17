@@ -1,4 +1,28 @@
-// const res = await fetch('https://sprint-mission-api.vercel.app/articles');
-// const data = await res.json();
+import axios from 'axios';
 
-// console.log(data);
+export async function getProductList(params = {}) {
+  const res = await axios.get('https://sprint-mission-api.vercel.app/products', {
+    params,
+  });
+  return res.data;
+}
+
+export async function getProduct(id) {
+  const res = await axios.get(`https://sprint-mission-api.vercel.app/products/${id}`);
+  return res.data;
+}
+
+export async function createProduct(productData) {
+  const res = await axios.post('https://sprint-mission-api.vercel.app/products', productData);
+  return res.data;
+}
+
+export async function patchProduct(id, productData) {
+  const res = await axios.patch(`https://sprint-mission-api.vercel.app/products/${id}`, productData);
+  return res.data;
+}
+
+export async function deleteProduct(id) {
+  const res = await axios.delete(`https://sprint-mission-api.vercel.app/products/${id}`);
+  return res.data;
+}
