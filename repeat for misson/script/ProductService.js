@@ -1,5 +1,14 @@
 import axios from 'axios';
 
+export function productErrorLog(error) {
+  if (error.response) {
+    console.log(error.response.status);
+    console.log(error.response.data);
+  } else {
+    console.log('리퀘스트가 실패했습니다.');
+  }
+}
+
 export async function getProductList(params = {}) {
   const res = await axios.get('https://sprint-mission-api.vercel.app/products', {
     params,

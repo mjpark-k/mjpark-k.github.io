@@ -1,4 +1,4 @@
-function errorLog(error) {
+export function articleErrorLog(error) {
   console.log(`에러 발생! : ${error.name}, ${error.message}`);
 }
 
@@ -13,7 +13,7 @@ export function getArticleList( params = {}) {
         throw new Error (`데이터를 불러오는데 실패했습니다...`);
       }
       return res.json();
-    }).catch(errorLog)
+    })
 }
 
 export function getArticle(id) {
@@ -23,7 +23,7 @@ export function getArticle(id) {
         throw new Error (`데이터를 불러오는데 실패했습니다...`);
       }
       return res.json();
-    }).catch(errorLog)
+    })
 }
 
 export function createArticle(articleData) {
@@ -38,7 +38,7 @@ export function createArticle(articleData) {
       throw new Error ('데이터를 생성하는데 실패했습니다...');
     }
     return res.json();
-  }).catch(errorLog)
+  })
 }
 
 export function patchArticle(id, articleData) {
@@ -53,7 +53,7 @@ export function patchArticle(id, articleData) {
       throw new Error ("데이터를 수정하는데 실패했습니다...");
     }
     return res.json();
-  }).catch(errorLog)
+  })
 }
 
 export function deleteArticle(id) {
@@ -62,7 +62,9 @@ export function deleteArticle(id) {
   }).then((res) => {
     if(!res.ok) {
       throw new Error("데이터를 삭제하는데 실패했습니다...");
+    } else if (res.status === 204){
+      return '';
     }
     return res.json();
-  }).catch(errorLog)
+  })
 }
