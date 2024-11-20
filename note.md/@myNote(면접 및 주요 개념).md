@@ -161,3 +161,72 @@ OAuth 서버와의 상호작용
 토큰 발급
 
 - 권한 부여 후, OAuth 서버는 써드 파티 애플리케이션에 액세스
+
+### 자바스크립트와 타입스크립트의 주요 차이점
+
+- 자바스크립트는 동적, 타입스크립트는 정적
+  - 타입스크립트가 컴파일 타임에 타입을 검사해 런타임 오류를 줄여줌
+- 인터페이스, 제네릭 등 추가 기능이 있음
+- IDE와 통합되어 코드 작성이 편리
+
+### TypeScript의 동작 원리
+
+코드 -> AST -> 타입 체크 -> 코드 생성 -> 실행 (자바스크립트 AST, 바이트 코드)
+
+> **AST**: Abstract Syntax Tree, 문자열로 된 코드를 트리 데이터 구조로 변환한 것  
+> ![](https://velog.velcdn.com/images/pmj9498/post/3555474f-c764-4869-acf6-27b19de1275e/image.png)
+>
+> Transpile: 타입스크립트 코드를 자바스크립트 코드로 변환하는 과정
+
+### 널러블 타입(Nullable Types)과 옵셔널 파라미터(Optional Parameters)의 개념을 설명하고, 각각 타입스크립트에서 어떻게 사용되는지 예시를 들어 설명
+
+널러블 타입 예시
+
+```ts
+let a: string | null = null;
+let b: string | undefined = undefined;
+```
+
+null이나 undefined가 될 수 있는 값으로 알면 좋다.
+
+옵셔널 파라미터 예시
+
+```ts
+function foo(bar?: string) {
+  // ...
+}
+```
+
+### 타입스크립트에서 타입 좁히기(Type Narrowing)이란 무엇이며, 왜 중요한가요? 또한, 이를 구현하는 방법에 대해 설명하고 예를 들어 설명해주세요.
+
+- 타입 좁히기: 여러 가능성이 있는 넓은 타입을 구체적인 좁은 타입으로 만드는 과정
+
+- 중요성: 명시적으로 타입을 변환해 런타임 오류를 줄이고 코드의 안정성을 높임
+
+- 구현 방법: `typeof`, `instanceof`
+
+- 예시 코드
+
+```ts
+function foo(bar: string | number) {
+  if (typeof bar === "string") {
+    console.log(bar.toUpperCase());
+  } else {
+    console.log(bar.toFixed(2));
+  }
+}
+```
+
+### 타입 정의(d.ts) 파일이란? 만드는 방법은?
+
+- 타입 정의 파일: 타입스크립트 파일에서 자바스크립트 라이브러리를 사용할 때, 프로젝트 타입 정보 선언에, 타입 정보를 제공하는 파일
+
+- 구조 설명: declare module, declare function 등의 키워드 사용
+
+- 사용 방법: @types 라이브러리 사용, 직접 작성
+
+```ts
+declare namespace Foo {
+  export function foo(bar: string): number;
+}
+```
